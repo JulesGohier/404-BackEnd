@@ -46,4 +46,4 @@ jobs:
             docker load -i /${{ secrets.VPS_USER }}/api_404-snf_i.tar
             docker stop api_404-snf_c || true
             docker rm api_404-snf_c || true
-            docker run -d --name api_404-snf_c -p 3400:3000 api_404-snf_i
+            docker run -d --name api_404-snf_c -p 3400:8000 api_404-snf_i
