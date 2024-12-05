@@ -3,7 +3,7 @@ name: 🚀 Deploy staging to VPS
 on:
   push:
     branches:
-      - production
+      - development
 
 jobs:
   build-and-deploy:
