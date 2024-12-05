@@ -1,0 +1,34 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: db_404_snf
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db404snf
+      MYSQL_USER: 404_user
+      MYSQL_PASSWORD: 404_pass
+    ports:
+      - "4534:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - app_network
+
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin_404_snf
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - "8300:80"
+    environment:
+      PMA_HOST: db
+    networks:
+      - app_network
+
+networks:
+  app_network:
+
+volumes:
+  db-data:
