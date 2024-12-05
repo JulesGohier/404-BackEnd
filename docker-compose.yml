@@ -19,11 +19,11 @@ services:
     container_name: phpmyadmin_404_snf
     restart: always
     depends_on:
-      - db
+      - db_404_snf
     ports:
       - "8300:80"
     environment:
-      PMA_HOST: db
+      PMA_HOST: db_404_snf
     networks:
       - app_network
 
