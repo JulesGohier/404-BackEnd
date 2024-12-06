@@ -12,6 +12,8 @@ WORKDIR /var/www/html
 
 COPY ./symfony/ .
 
+COPY .env .env
+
 RUN composer install
 
 RUN chown -R www-data:www-data var/
